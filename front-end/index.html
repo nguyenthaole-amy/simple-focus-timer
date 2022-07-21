@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <title>Amy's website</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="nav-right">
+        <a href="#contact">CONTACT</a>
+        <a href="about.html">ABOUT</a>
+        <a href="index.html">HOME</a>
+        <div class="float">
+            <a>AMY'S CORNER</a>
+        </div>
+    </div>
+
+    <div id="top"></div>
+
+    <div class="content">
+        <h1>
+
+        </h1>
+        <div class="greeting-panel">
+
+            <div class="greeting-text">
+                <h1>WELCOME TO AMY'S CORNER!</h1>
+                <h5>Hi! My name is Nguyen Thao Le, you can call me Amy. This is my project showcase website.</h5>
+            </div>
+        </div>
+
+        <h2></h2>
+
+        <div id="big-text">TIMER</div>
+
+        <br>
+
+        <form id="timer-form">
+            <input id="hour" placeholder="Hours">
+            <input id="min" placeholder="Minutes">
+            <input id="sec" placeholder="Seconds">
+            <button id="start-b" type="submit" onclick="createButton()">Start</button>
+        </form>
+
+        <h2></h2>
+        <script>
+            var createButton = () => {
+                document.getElementById("restart-timer").innerHTML = ""
+                var button = document.createElement("button")
+                button.innerHTML = "STOP"
+                button.setAttribute("id", "stop-b")
+                document.getElementById('stop-timer').appendChild(button)
+                button.onclick = () => {
+                    clearTimeout(timeOutID)
+                    document.getElementById("timer").innerHTML = "You have stopped the timer"
+                    document.getElementById("restart-timer").innerHTML = "To restart the timer, enter the time again!"
+                    button.innerHTML = "RESTART"
+                    button.onclick = () => {
+                        document.getElementById("timer-form").style.visibility = "visible"
+                        document.getElementById("timer").innerHTML = null
+                        document.getElementById("restart-timer").innerHTML = null
+                        button.remove()
+                    }
+                }
+            }
+        </script>
+
+        <script src="./app.js"></script>
+        <div id="timer"></div>
+        <div id="restart-timer"></div>
+
+        <h2></h2>
+
+        <div id="stop-timer"></div>
+
+        <h2></h2>
+
+        <div id="contact">
+            <p>
+            <div id="contact-text">
+                <div id="contact-heading">
+                    <h2>Contact</h2>
+                </div>
+                <div id="contact-content">
+                    <p>
+                        <strong>Email:</strong> nguyenthao.le@outlook.com
+                        <br> <strong>Mobile:</strong> (413) 437-6222
+                        <br>
+                        <a href="https://www.linkedin.com/in/thao-le-amy/"><img
+                                src="https://cdn-icons-png.flaticon.com/512/61/61109.png" width="30px"></a>
+                        <a href="https://github.com/nguyenthaole-amy"><img
+                                src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30px"></a>
+                    </p>
+                </div>
+            </div>
+            </p>
+        </div>
+    </div>
+
+    <div id="toTheTop">
+        <a href="index.html#top">TOP</a>
+    </div>
+
+    <div class="footer">
+        <p>
+            This website is dedicated for projects journal and projects showcase.
+        </p>
+        <p>©️ Nguyen Thao Le (Amy)</p>
+    </div>
+
+</body>
+
+</html>
